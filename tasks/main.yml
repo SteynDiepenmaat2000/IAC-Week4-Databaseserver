@@ -1,0 +1,12 @@
+---
+# tasks file for databaseserver
+- name: Installeer MySQL Server
+  ansible.builtin.package:
+    name: mysql-server
+    state: present
+
+- name: Verzeker dat MySQL service draait
+  ansible.builtin.service:
+    name: mysql
+    state: started
+    enabled: yes
